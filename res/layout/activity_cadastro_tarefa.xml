@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CadastroTarefaActivity" >
+
+    <TextView
+        android:id="@+id/txtTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="37dp"
+        android:text="Nome da Tarefa:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtTarefa"
+        android:layout_below="@+id/txtTarefa"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtObservacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edTarefa"
+        android:layout_below="@+id/edTarefa"
+        android:layout_marginTop="16dp"
+        android:text="Observação"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edObservacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtObservacao"
+        android:layout_below="@+id/txtObservacao"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/txtdtfinalizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edObservacao"
+        android:layout_below="@+id/edObservacao"
+        android:layout_marginTop="16dp"
+        android:text="Data da Finalização: Ex:.(dd/mm/aaaa)"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edDtFinalizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtdtfinalizacao"
+        android:layout_below="@+id/txtdtfinalizacao"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <CheckBox
+        android:id="@+id/chbNotificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edDtFinalizacao"
+        android:layout_below="@+id/edDtFinalizacao"
+        android:layout_marginTop="17dp"
+        android:text="Notificar ?" />
+
+    <Button
+        android:id="@+id/btnOkTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/chbNotificar"
+        android:layout_below="@+id/chbNotificar"
+        android:layout_marginTop="20dp"
+        android:text="OK" />
+
+    <Button
+        android:id="@+id/btnCancelarTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnOkTarefa"
+        android:layout_alignBottom="@+id/btnOkTarefa"
+        android:layout_centerHorizontal="true"
+        android:text="Cancelar" />
+
+</RelativeLayout>
