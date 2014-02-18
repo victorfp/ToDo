@@ -1,9 +1,12 @@
 package com.example.todo;
 
 import com.example.persistencia.DAO;
+import com.exemple.persistenciaWeb.ConexaoHttpClient;
+
 import android.os.Bundle;
 import android.animation.TimeInterpolator;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -35,15 +38,42 @@ public class CadastroTarefaActivity extends Activity  {
 				String tarefa = ed_tarefa.getText().toString();
 				String obs = ed_observacao.getText().toString();
 				String data = ed_data.getText().toString();
+				dao = new DAO(getApplicationContext());
 				int notificar = -1;
+				
+				
 				if (chb_notificar.isChecked()){
 					notificar = 1;
 				}else {
 					notificar = 0;
 				}
-				dao = new DAO(getApplicationContext());
-				dao.inserirTarefa(tarefa, obs, data, notificar);
-				Toast.makeText(getApplicationContext(), "Gravando tarefa", Toast.LENGTH_SHORT).show();
+				
+				
+				//webService
+				Log.i("Logar","Entrou no evento Onclick WEB");
+				String urlGet ="http://10.0.2.2/projects/inserirTarefa.php?nm_tarefa="+tarefa+"&obs="+obs+"&dt_finalizacao="+data+"&notificar="+notificar+"";
+				String respostaRetornada = null;
+				Log.i("Logar","vai entrar no try WEB");
+				try { 
+					respostaRetornada = ConexaoHttpClient.executaHttpGet(urlGet);
+					String resposta = respostaRetornada.toString();
+					resposta = resposta.replaceAll("\\s+", "");
+					Log.i("Logar","Resposta : "+resposta.charAt(0));
+					if (resposta.equals("1")){
+						dao.inserirTarefa(tarefa, obs, data, notificar);
+						Toast.makeText(getApplicationContext(), "Gravando tarefa", Toast.LENGTH_SHORT).show();
+						}
+					else
+						Toast.makeText(getApplicationContext(), "Usuário NÃO foi inserido com sucesso!", Toast.LENGTH_LONG).show();
+
+
+				} catch (Exception e) {
+					Log.i("Erro ","Erro : " +e);
+
+				}
+
+
+				
 				
 				
 			}

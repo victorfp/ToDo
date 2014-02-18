@@ -55,7 +55,7 @@
         android:layout_alignLeft="@+id/edObservacao"
         android:layout_below="@+id/edObservacao"
         android:layout_marginTop="16dp"
-        android:text="Data da Finalização: Ex:.(dd/mm/aaaa)"
+        android:text="Data da Finalização: Ex:.(aaaa-mm-dd)"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
