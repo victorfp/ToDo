@@ -24,12 +24,13 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08001a;
-        public static final int add_item_tarefa=0x7f08001b;
+        public static final int action_settings=0x7f08001b;
+        public static final int add_item_tarefa=0x7f08001c;
         public static final int btCancelarCad=0x7f080007;
         public static final int btOkCad=0x7f080006;
         public static final int btentrar=0x7f080016;
         public static final int btnCancelarTarefa=0x7f080010;
+        public static final int btnExcluirTarefa=0x7f080019;
         public static final int btnOkTarefa=0x7f08000f;
         public static final int chbNotificar=0x7f08000e;
         public static final int edDtFinalizacao=0x7f08000d;
@@ -40,9 +41,9 @@ public final class R {
         public static final int edTarefa=0x7f080009;
         public static final int edTelefone=0x7f080013;
         public static final int edTelefoneCad=0x7f080003;
-        public static final int id_tarefa=0x7f080018;
         public static final int listView=0x7f080011;
-        public static final int nm_tarefa=0x7f080019;
+        public static final int nm_tarefa=0x7f08001a;
+        public static final int titulo_tarefa=0x7f080018;
         public static final int txtEmailCad=0x7f080000;
         public static final int txtNCadastrado=0x7f080017;
         public static final int txtObservacao=0x7f08000a;
@@ -58,13 +59,16 @@ public final class R {
         public static final int activity_cadastro_tarefa=0x7f030001;
         public static final int activity_list_tarefa=0x7f030002;
         public static final int activity_login=0x7f030003;
-        public static final int list_tarefa=0x7f030004;
+        public static final int activity_main=0x7f030004;
+        public static final int activity_tarefa=0x7f030005;
+        public static final int list_tarefa=0x7f030006;
     }
     public static final class menu {
         public static final int cadastro_login=0x7f070000;
         public static final int cadastro_tarefa=0x7f070001;
         public static final int list_tarefa=0x7f070002;
         public static final int login=0x7f070003;
+        public static final int main=0x7f070004;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -73,6 +77,7 @@ public final class R {
         public static final int title_activity_cadastro_login=0x7f050003;
         public static final int title_activity_cadastro_tarefa=0x7f050004;
         public static final int title_activity_list_tarefa=0x7f050005;
+        public static final int title_activity_tarefa=0x7f050006;
     }
     public static final class style {
         /** 

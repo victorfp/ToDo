@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ActivityTarefa" 
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@id/txtTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tarefa"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <EditText
+        android:id="@+id/titulo_tarefa"
+        android:editable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+    <TextView
+        android:id="@id/txtObservacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Observação"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@id/edObservacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <TextView
+        android:id="@id/txtdtfinalizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Data da Finalização: Ex:.(dd/mm/aaaa)"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@id/edDtFinalizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date" />
+
+    <CheckBox
+        android:id="@id/chbNotificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Notificar?" />
+    
+    <LinearLayout android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:paddingBottom="@dimen/activity_vertical_margin"
+	    android:paddingLeft="@dimen/activity_horizontal_margin"
+	    android:paddingRight="@dimen/activity_horizontal_margin"
+	    android:paddingTop="@dimen/activity_vertical_margin"
+	    android:orientation="horizontal">
+    
+	        <Button
+		        android:id="@id/btnOkTarefa"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Salvar" />
+	
+	    	<Button
+		        android:id="@+id/btnExcluirTarefa"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Excluir"/>
+	    	
+	    	<Button
+		        android:id="@+id/btnCancelarTarefa"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Cancelar" />
+    </LinearLayout>
+    
+</LinearLayout>

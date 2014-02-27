@@ -1,7 +1,9 @@
 package com.example.todo;
 
+import com.example.model.Tarefa;
 import com.example.persistencia.DAO;
-import com.exemple.persistenciaWeb.ConexaoHttpClient;
+import com.example.persistenciaWeb.ConexaoHttpClient;
+import com.example.todo.R;
 
 import android.os.Bundle;
 import android.animation.TimeInterpolator;
@@ -35,23 +37,28 @@ public class CadastroTarefaActivity extends Activity  {
 			
 			@Override
 			public void onClick(View v) {
+				
+				
+				
+				
+				
 				String tarefa = ed_tarefa.getText().toString();
 				String obs = ed_observacao.getText().toString();
 				String data = ed_data.getText().toString();
 				dao = new DAO(getApplicationContext());
-				int notificar = -1;
+				int notificar;
 				
-				
+				Tarefa t = new Tarefa();
 				if (chb_notificar.isChecked()){
 					notificar = 1;
 				}else {
 					notificar = 0;
 				}
 				
-				
+				if (!tarefa.equals("") && !obs.equals("") && !data.equals("")){
 				//webService
 				Log.i("Logar","Entrou no evento Onclick WEB");
-				String urlGet ="http://10.0.2.2/projects/inserirTarefa.php?nm_tarefa="+tarefa+"&obs="+obs+"&dt_finalizacao="+data+"&notificar="+notificar+"";
+				String urlGet ="http://10.0.2.2/projects/inserirTarefa.php?nm_tarefa="+tarefa+"&obs="+obs+"&dt_finalizacao="+t.postarFormato(data)+"&notificar="+notificar+"";
 				String respostaRetornada = null;
 				Log.i("Logar","vai entrar no try WEB");
 				try { 
@@ -71,15 +78,27 @@ public class CadastroTarefaActivity extends Activity  {
 					Log.i("Erro ","Erro : " +e);
 
 				}
-
-
 				
-				
-				
+				}else{
+					Toast.makeText(getApplicationContext(), "Verifique se TODOS os campos estão preenchidos!", Toast.LENGTH_LONG).show();
+				}
+				finish();
 			}
 		});
 		
+ bt_cancelar.setOnClickListener(new View.OnClickListener() {
+	
+	@Override
+	public void onClick(View v) {
+		finish();
+		
 	}
+});
+	
+	
+	}
+	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
